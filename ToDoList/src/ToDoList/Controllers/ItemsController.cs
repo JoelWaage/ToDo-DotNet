@@ -15,5 +15,10 @@ namespace ToDoList.Controllers
         {
             return View(db.Items.ToList());
         }
+        public IActionResult Details(int id)
+        {
+            var thisItem = db.Items.FirstOrDefault(items => items.ItemId == id);
+            return View(thisItem);
+        }
     }
 }
